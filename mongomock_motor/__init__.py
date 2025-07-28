@@ -254,7 +254,7 @@ class AsyncMongoMockCollection:
     def find(self, *args, **kwargs) -> AsyncCursor:
         return AsyncCursor(self.__collection.find(*args, **kwargs))
 
-    def aggregate(self, *args, **kwargs) -> AsyncLatentCommandCursor:
+    async def aggregate(self, *args, **kwargs) -> AsyncLatentCommandCursor:
         return AsyncLatentCommandCursor(self.__collection.aggregate(*args, **kwargs))
 
     def list_indexes(self, *args, **kwargs) -> AsyncCommandCursor:
